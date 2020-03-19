@@ -1,0 +1,5 @@
+s3bucket:
+  accessKey: AKIA3NIK6ANZ2W7LOMPL
+  accessSecret: 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
+  bucketName: spring-boot-s3-test
+
