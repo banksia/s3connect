@@ -17,7 +17,6 @@ import java.util.Date;
 @RestController
 @RequestMapping("/store")
 public class S3Controller {
-
     @Autowired
     S3Service service;
 

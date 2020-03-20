@@ -32,3 +32,6 @@ build/
 
 ### Test upload file ###
 *-test-file.txt
+
+### Logs folder ###
+logs/
