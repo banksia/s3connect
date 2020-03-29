@@ -1,6 +1,8 @@
 package com.example.s3connect.controller;
 
 import com.example.s3connect.service.S3Service;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import java.util.Date;
 
 @RestController
 @RequestMapping("/store")
+@Api(value="S3 file store", description="Operations for storing files in AWS S3")
 public class S3Controller {
     @Autowired
     S3Service service;
@@ -24,6 +27,7 @@ public class S3Controller {
 
     @PostMapping(path = "/upload", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     @ResponseStatus(HttpStatus.CREATED)
+    @ApiOperation(value = "Upload file")
     public String uploadFile(@RequestPart(value = "file") MultipartFile file) throws IOException {
         logger.trace("Multipart input: " + file.getOriginalFilename());
         File uploadFile = convertMultiPartToFile(file);
